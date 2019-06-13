@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<courses>
+
+	<course>
+		<coursecode> IT 102 </coursecode>
+		<title>  Discrete Structures </title>
+	</course>
+	
+	<course>
+		<coursecode> IT 104 </coursecode>
+		<title> Introduction to Computing </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 105 </coursecode>
+		<title> IT Architecture Fundamentals </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 109 </coursecode>
+		<title> Introduction to Computer Programming (Python) </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 207 </coursecode>
+		<title> Applied IT Programming (PHP) </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 209 </coursecode>
+		<title> Introduction to Object-Oriented Programming (Python) </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 213 </coursecode>
+		<title> Multimedia and Web Design </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 214 </coursecode>
+		<title> Database Fundamentals (SQL) </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 216 </coursecode>
+		<title> Systems Analysis and Design </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 223 </coursecode>
+		<title> Information Security Fundamentals </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 293 </coursecode>
+		<title> Applied IT: Junior Transitions </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 300 </coursecode>
+		<title> Modern Telecommmunications </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 304 </coursecode>
+		<title> IT in the Global Economy </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 341 </coursecode>
+		<title> Data Communications and Network Principles </title>
+	</course>
+	
+	<course> 
+		<coursecode> IT 343 </coursecode>
+		<title> IT Project Management </title>
+	</course>
+	
+	<course> 
+		<coursecode> MBUS 300 </coursecode>
+		<title> Accounting in a Global Economy </title>
+	</course>
+
+</courses>

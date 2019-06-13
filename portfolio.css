@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* General */
+#content {
+	background-color: #4FC2D6; 
+}
+
+#home {
+	background-image: url(images/glacier.jpg); /* Image of Mendenhall Glacier */
+	margin-left: 8%; 
+	margin-right: 8%;
+
+	/*
+	background-attachment: fixed; 
+	background-size: fill;
+	background-position: center; */
+	
+	/*
+	background-color: palegreen; 
+	*/
+}
+
+/* Home Page */
+#homepageopen{
+	text-align: center; 
+	font-style: italic;
+}
+
+#transparent{
+	width: 14%;
+	height: 7%; 
+	background-position: 8px 8px; 
+}
+
+/* Navigation Bar */
+
+#logo { 
+	width: 100px;
+	height: 92px; 
+	background-position: 8px 8px; 
+}
+
+#navlist {
+	padding: 0px;  
+	font: bold 1em; 
+	background: #16B1AA;
+	text-align: left; 
+}
+
+#navlist li {
+	font: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif" 1em; 
+	font-weight: bold; 
+	list-style: none;
+	display: inline; 
+}
+
+#navlist li a {
+	width: auto; 
+	border-radius: 7px;
+	padding: 0.50em 0.5em 0.50em 0.50em;
+	text-decoration: none;
+	color: #FFFFFF; 
+
+}
+
+#navlist li a:link {
+	color: #80386A;
+}
+
+#navlist li a:active {
+	color: #1B09F7; 
+}
+
+#navlist li a:visited {
+	color: #0A5A61;
+}
+
+#navlist li a:hover {
+	color: #FFFFFF; 
+	background-size: 50%;
+	background-position: center;
+	text-shadow: 2px 2px #08D5E7;
+}
+
+
+/* Content */
+
+ul.classes {
+	list-style: square inside;
+}
+
+
+.reference{
+	text-shadow: 1px 1px gray;
+}
+
+/* Table */
+table {
+	border-collapse: collapse;
+	max-width: 70%;  
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table, th, td {
+	border: 2px solid black; 
+	text-align: center; 
+}
+
+.aboutrows{
+	background: #84D4E2;
+}
+
+/* Footer */
+
+#footer{
+	background: #246AD5;
+	color: white; 
+	text-align: center; 
+}
+
+#footer a:link {
+	color: white;
+}
+
+#footer a:visited {
+	color: lightgray;
+}
+
+#footer a:hover {
+	color: #18DBD8; 
+}
+
+
+/* Forms */
+
+.siteforms {
+	font-size: 1em; 
+	padding-left: 5%;
+}
+
+.siteforms p {
+	font-weight: bold; 
+}
+
+.siteforms fieldset {
+	width: 60%;
+	border: 2px solid #00F;
+	padding: 1em; 
+	margin: 0.5em 0;
+  }
+
+
+.siteforms legend {
+	font-size: 1em;
+	color: #FFFFFF; 
+	background: #00F;
+	padding: 0.25em 0.5em;
+
+}
+
+.stringOutput {
+	box-sizing: border-box;
+}
+
+/* Images */
+
+#bloglogo{
+	width: 25%;
+	height: 25%; 
+	float: right; 
+	margin: 0px 10px 0px 10px;
+}
+
+#contactimage{
+	width: 15%;
+	float: right; 
+	border: 2px solid black;
+	margin: 0px 30px 0px 10px;
+}
+
+
+#nameimage{
+	padding: 15px 15px 15px 15px; 
+}
+
+.divpicture{
+	align-content: center; 
+	padding-left: 120px;
+}
+.picture {
+	width: 25%;
+	height: 25%; 
+	border: 1px solid black; 
+}
+
+/* Links */
+a:link {
+	color: white;
+}
+
+a:visited {
+	color: #04315F;
+}
+
+a:hover {
+	color: #082F55; 
+}
+
+ul li a:link {
+	color: white;
+}
+
+ul li a:visited {
+	color: #04315F;
+}
+
+ul li a:hover {
+	color: #082F55; 
+}
+
+/* References */
+
+
+/* Code */
+.code {
+	background-color: black; 
+	font-family: monospace;
+}

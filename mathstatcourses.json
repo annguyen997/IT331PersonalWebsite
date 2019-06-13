@@ -1,0 +1,22 @@
+{
+  "courses": {
+    "course": [
+      {
+        "coursecode": " MATH 113 ",
+        "title": "  Calculus and Analytic Geometry I "
+      },
+      {
+        "coursecode": " MATH 114 ",
+        "title": " Calculus and Analytic Geometry II "
+      },
+      {
+        "coursecode": " MATH 125 ",
+        "title": " Discrete Mathematics "
+      },
+      {
+        "coursecode": " STAT 250 ",
+        "title": " Introductory Statistics I "
+      }
+    ]
+  }
+}

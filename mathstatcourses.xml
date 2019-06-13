@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<courses>
+
+	<course>
+		<coursecode> MATH 113 </coursecode>
+		<title>  Calculus and Analytic Geometry I </title>
+	</course>
+	
+	<course>
+		<coursecode> MATH 114 </coursecode>
+		<title> Calculus and Analytic Geometry II </title>
+	</course>
+	
+	<course> 
+		<coursecode> MATH 125 </coursecode>
+		<title> Discrete Mathematics </title>
+	</course>
+	
+	<course> 
+		<coursecode> STAT 250 </coursecode>
+		<title> Introductory Statistics I </title>
+	</course>
+</courses>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Contact Me </title>
+  
+   <!-- Bootstrap -->
+   <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+   <link href="portfolio.css" rel="stylesheet" type="text/css">
+   
+   <!-- Developer added JavaScript external scripts -->
+   <script type="text/javascript" src="./js/randomImages.js"></script> 
+   <script type="text/javascript" src="./js/mouseOverEvents.js"></script>
+	
+   <!-- jQuery files --> 
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <link rel="stylesheet" href="/resources/demos/style.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+   <script>  
+		$(document).ready(function() {
+		  $('.error').hide();
+			$('#submit').click(function(){
+				var name = $('#name').val();
+				var email = $('#email').val();
+
+				if(name== ''){
+				  $('#name').next().show();
+				  return false;
+				}
+				
+				if(email== ''){
+				  $('#email').next().show();
+				  return false;
+				}
+				
+				if(IsEmail(email)==false){
+				  $('#invalid_email').show();
+				  return false;
+				}
+				
+				$.post("", $("#myform").serialize(),  function(response) {
+				  $('#myform').fadeOut('slow',function(){
+					  $('#correct').html(response);
+					  $('#correct').fadeIn('slow');
+					});
+				});
+				
+				return false;
+			});
+		});
+		
+		function IsEmail(email) {
+			var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if (!regex.test(email)) {
+				return false;
+			} else {
+				return true;
+			}
+		}
+	</script>
+</head>
+<body id="home">
+  	<!-- body code goes here -->
+		<div id="header"> 
+		<nav> 
+			<!-- Horizontal Navigation --> 
+			<ul id="navlist">
+				<li><a href="index.html"> <img id="logo" src="images/web_logo.png" alt="Website logo"> </a> </li>
+				<li><a href="about.html"> About </a></li>
+				<li><a href="portfolio.html"> Portfolio </a></li>
+				<li><a href="pictures.html"> Pictures/Hobbies </a></li>
+				<li><a href="programming.html"> Programming </a></li>
+				<li><a href="contact.html"> Contact </a></li>
+				<li><a href="references.html"> References </a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<div id="content"> 
+		<h1 id="rollover"> Contact </h1>
+        
+		<!-- Should the setImage() function in the linked JS file does not work, the beach.png file and its alternative text are used by default. This is necessary for validating purposes --> 
+		<p id="contactPhoto"> <img id="contactimage" src="beach.png" alt="An portrait image with two boys on a statue in Virginia Beach, Virginia"> </p> 
+        <ul>
+	        <li> Email: <a href="Mailto:anguye60@gmu.edu"> Email: anguye60@gmu.edu </a> </li>
+        	<li> LinkedIn: <a href="https://www.linkedin.com/in/annguyen997/"> LinkedIn </a> </li>
+        	<li> GitHub: <a href="https://github.com/annguyen997"> GitHub </a></li>
+        </ul>
+        
+        <form> <input type="button" id="deleteSideImage" value="Delete Sidebar Image"> </form> 
+		
+		<form action="" method="post" id="contactform">
+				 <table class="mytable">
+					<tr>
+						<td> Interaction Form: Allow me to know you more! <br> 
+						I would like to know my audience so I can grow this website.
+						<br> Please note that this form incorporates jQuery elements. The older version of this form is available below. 
+						</td> 
+					</tr>
+					<tr>
+						<td>
+						<p> Date: <input type="text" id="datepicker"></p>
+						</td>
+					</tr> 
+					<tr>
+					   <td class="name"><label for="name">Name :</label>
+					   <input name="name" id="name" type="text" placeholder="Please enter your name" class="contact-input"><span class="error">Enter your name here</span></td>
+					</tr>
+					<tr>
+					   <td class="email"><label for="email">Email :</label>
+					   <input name="email" id="email" type="text" placeholder="Please enter your email" class="contact-input"><span class="error">Enter your email-id here</span>
+						  <span class="error" id="invalid_email">Email-id is invalid</span>
+					   </td>
+					</tr>
+					<tr> 
+						<td> <label> Gender: </label> 
+							<input type="radio" name="gender" value="male"> Male 
+							<input type="radio" name="gender" value="female"> Female 
+							<input type="radio" name="gender" value="other"> Other
+						</td> 
+					<tr>
+						<td> <label> Age Demographic: </label> 
+						<select name="age">
+						<option selected> 60+ years </option>
+						<option> 45-60 years </option>
+						<option> 30-44 years </option>
+						<option> 20-29 years </option>
+						<option> 13-19 years </option>
+						<option> 0-12 years </option>
+						</select>
+						</td>
+					</tr>
+					<tr>					
+						<td> <label for = "months"> Birth Month:
+						<input type="text" id="months" placeholder="Select your birth month" list="monthlist"/> 
+						<datalist id="monthlist">
+							<option value="January">
+							<option value="February">
+							<option value="March">
+							<option value="April">
+							<option value="May">
+							<option value="June">
+							<option value="July">
+							<option value="August">
+							<option value="September">
+							<option value="October">
+							<option value="November">
+							<option value="December">
+						</datalist> </label> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p> Favorite Color (select button to choose a color): <input type="color"> </p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<p> Things You Liked About the Site: </p>
+						  <input type="checkbox" id="Checkbox1" name="checkboxgroup" data-validation="checkbox_group">
+						  <label for="Checkbox1"> Website Design </label>
+						  <input type="checkbox" id="Checkbox2" name="checkboxgroup">
+						  <label for="Checkbox2"> Ease of Use </label>
+						  <input type="checkbox" id="Checkbox3" name="checkboxgroup">
+						  <label for="Checkbox3"> Content </label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						Comments: (<span id="maxlength">50</span> characters left)
+						<textarea id="area" rows="3"></textarea>
+						</td>
+					</tr> 
+					<tr>
+					   <td>
+					   <input type="submit" class="contactform-buttons" id="submit"value="Send" />
+					   <input type="reset" class="contactform-buttons" id="" value="Clear" />
+					   </td>
+					</tr>
+				 </table>
+		</form>
+		
+		<br>
+		<br> 
+		<form class="siteforms" id="contactform"> 
+			<h5> Interaction Form: Allow me to know you more! </h5>
+			<fieldset> 
+				<legend> I would like to know my audience so I can grow this website. </legend>
+			
+				<p> <strong> Date: </strong> <input type="text" id="datepicker"></p><br> 
+				<strong> Name: </strong> <input type="text" size="30"> <br>
+				<label> <strong> Email Address: </strong> <input type="email" id="email_address" placeholder="Ensure you add '@' here."
+				size="32" data-validation="required"> </label> <br> 
+				<strong> Gender: </strong> <input type="radio" name="gender" value="male"> Male 
+				<input type="radio" name="gender" value="female"> Female <input type="radio" name="gender" value="other"> Other <br> 
+
+				<strong> Age Demographic: </strong> 
+					<select name="age">
+						<option selected> 60+ years </option>
+						<option> 45-60 years </option>
+						<option> 30-44 years </option>
+						<option> 20-29 years </option>
+						<option> 13-19 years </option>
+						<option> 0-12 years </option>
+					</select>
+				<label for = "months"> <strong> Birth Month: </strong>
+					<input type="text" id="months" placeholder="Select your birth month" list="monthlist"/> 
+					<datalist id="monthlist">
+						<option value="January">
+						<option value="February">
+						<option value="March">
+						<option value="April">
+						<option value="May">
+						<option value="June">
+						<option value="July">
+						<option value="August">
+						<option value="September">
+						<option value="October">
+						<option value="November">
+						<option value="December">
+					</datalist> </label>
+				<p> Favorite Color (select button to choose a color): <br> <input type="color"> </p>
+		
+				<p> Things You Liked About the Site: <br>
+				</p>
+				<div id="Checkboxes1">
+					  <input type="checkbox" id="Checkbox1" name="checkboxgroup" data-validation="checkbox_group">
+					  <label for="Checkbox1"> Website Design </label>
+					  <input type="checkbox" id="Checkbox2" name="checkboxgroup">
+					  <label for="Checkbox2"> Ease of Use </label>
+					  <input type="checkbox" id="Checkbox3" name="checkboxgroup">
+					  <label for="Checkbox3"> Content </label>
+				  </div>
+				  <!--
+				<p> 
+				  <label> <input name="userlikes" type="checkbox" value="Website Design"> Website Design </label> 
+				  <label> <input name="userlikes" type="checkbox" value="Ease of Use"> Ease of Use </label> 
+				  <label> <input name="userlikes" type="checkbox" value="Content"> Content </label> 
+				  </p> -->
+
+				<p> Site Rating: 
+					<select name="rating">
+						<option> 10 </option>
+						<option> 9 </option>
+						<option> 8 </option>
+						<option> 7 </option>
+						<option> 6 </option>
+						<option> 5 </option>
+						<option> 4 </option>
+						<option> 3 </option>
+						<option> 2 </option>
+						<option> 1 </option>
+					</select>
+				</p> <br> 
+			<input type="button" value="Submit Form"> <!-- Note this is a dummy form, so the Submit button is unoperational -->
+			<input type="reset" value="Reset">
+			</fieldset>
+		</form>
+		<br>
+	</div>
+			
+<div id="correct" style="color:gray;"></div>
+ <script>
+  $('#area').restrictLength($('#maxlength'));
+  
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  
+</script>
+ 
+</body>
+</html>

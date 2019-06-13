@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<languages>
+	<language>
+		<name> Python </name>
+		<link> https://www.python.org/ </link>
+	</language>
+	<language>
+		<name> Java </name>
+		<link> https://www.java.com/en/ </link>
+	</language>
+	<language>
+		<name> SQL/MySQL </name>
+		<link> https://www.mysql.com/</link>
+	</language>
+	<language>
+		<name> PHP </name>
+		<link> http://www.php.net/ </link>
+	</language>
+	<language>
+		<name> JavaScript </name>
+		<link> https://developer.mozilla.org/en-US/docs/Web/JavaScript </link>
+	</language>
+	<language>
+		<name> HTML </name>
+		<link> https://www.w3.org/html/ </link>
+	</language>
+	<language>
+		<name> CSS </name>
+		<link> https://www.w3.org/Style/CSS/ </link>
+	</language>
+	<language>
+		<name> Matlab </name>
+		<link> https://www.mathworks.com/help/matlab/</link>
+	</language>
+</languages>

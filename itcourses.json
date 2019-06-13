@@ -1,0 +1,70 @@
+{
+  "courses": {
+    "course": [
+      {
+        "coursecode": " IT 102 ",
+        "title": "  Discrete Structures "
+      },
+      {
+        "coursecode": " IT 104 ",
+        "title": " Introduction to Computing "
+      },
+      {
+        "coursecode": " IT 105 ",
+        "title": " IT Architecture Fundamentals "
+      },
+      {
+        "coursecode": " IT 109 ",
+        "title": " Introduction to Computer Programming (Python) "
+      },
+      {
+        "coursecode": " IT 207 ",
+        "title": " Applied IT Programming (PHP) "
+      },
+      {
+        "coursecode": " IT 209 ",
+        "title": " Introduction to Object-Oriented Programming (Python) "
+      },
+      {
+        "coursecode": " IT 213 ",
+        "title": " Multimedia and Web Design "
+      },
+      {
+        "coursecode": " IT 214 ",
+        "title": " Database Fundamentals (SQL) "
+      },
+      {
+        "coursecode": " IT 216 ",
+        "title": " Systems Analysis and Design "
+      },
+      {
+        "coursecode": " IT 223 ",
+        "title": " Information Security Fundamentals "
+      },
+      {
+        "coursecode": " IT 293 ",
+        "title": " Applied IT: Junior Transitions "
+      },
+      {
+        "coursecode": " IT 300 ",
+        "title": " Modern Telecommmunications "
+      },
+      {
+        "coursecode": " IT 304 ",
+        "title": " IT in the Global Economy "
+      },
+      {
+        "coursecode": " IT 341 ",
+        "title": " Data Communications and Network Principles "
+      },
+      {
+        "coursecode": " IT 343 ",
+        "title": " IT Project Management "
+      },
+      {
+        "coursecode": " MBUS 300 ",
+        "title": " Accounting in a Global Economy "
+      }
+    ]
+  }
+}

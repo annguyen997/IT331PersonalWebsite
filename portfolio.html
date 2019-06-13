@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title> Portfolio </title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+	<link href="portfolio.css" rel="stylesheet" type="text/css">
+  
+  <!-- The Spry framework link for this page --> 
+	<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+	<script src="SpryAssets/SpryData.js" type="text/javascript"></script>
+	<script src="SpryAssets/SpryJSONDataSet.js" type="text/javascript"></script>
+	<script src="SpryAssets/xpath.js" type="text/javascript"></script>
+	  
+	  
+	  <!-- This is the script regarding buttons and hyperlink on page (in this case GMU) --> 
+	 <script type="text/javascript">
+			
+		 	//The function that calls automatically upon loading webpage; button and hyperlink on page set to open external webpage when clicked.
+			function start(){
+				document.getElementById("popWindowCatalogButton").addEventListener("click", open_window, false); 
+				document.getElementById("popWindowCatalogLink").addEventListener("click", open_window, false); 
+			}
+			
+			//Open the webpage when button/hyperlink on this webpage when clicked (an event handler).
+			function open_window(){
+				//attributes of open() method - URL, name (which is empty for the moment as it is depecrated), features
+				window.open("https://catalog.gmu.edu/", "", "menubar, toolbar, height=800, width=1000, scrollbars, resizable, titlebar");  
+			}
+		
+		 //Add listener when page loads. 
+		 window.addEventListener("load", start, false); 
+		 
+	  </script>
+	  
+	  <!-- This is the script to handle XML Data using Spry framework --> 
+	  <script type="text/javascript">
+		  //XMLDataSet(file name, element to retrieve data (with relations indicating as "/", <some other argument>)
+		  
+		  //The object that will hold the data from an XML file pertaining IT related courses.
+		  var dsITCourses = new Spry.Data.XMLDataSet("itcourses.xml", "courses/course"); 
+		  
+		  //The object that will hold the data from an XML file pertaining math related courses.
+		  var dsMathStatCourses = new Spry.Data.XMLDataSet("mathstatcourses.xml", "courses/course");
+	  </script>
+	  
+	  
+	  <!-- AJAX response to display programming languages the webmaster has learned to date --> 
+	  <script type="text/javascript">
+		  /* Create the request button for this webpage for AJAX purposes */
+		  var request = new XMLHttpRequest();
+		  
+		  /* Registers the button that will load the languages stored in the XML file upon clicking the button. */ 
+		  function register(){
+			  document.getElementById("fetch").addEventListener("click", function(){retrieveLanguages("languages.xml");}, false); 
+		  }
+		  
+		  /* Retrieves the information from the XML file via an XMLHTML request */ 
+		  function retrieveLanguages(url){
+			  	//If request was selected and thus true, send the request. 
+				if (request){
+					request.addEventListener("readystatechange", loadLanguages, false);
+					request.open("GET", url, true);
+					request.send(null); 
+				} //end if 
+		  }
+		  
+		  /* Retrieves the languages and associated online documentations from the XML file */ 
+		  function loadLanguages(){
+			  //If the request is ready state and no errors occur, run the request and retrieve data from XML.
+			  if (request.readyState==4&&request.status==200){
+				  var XMLResponseText = request.responseXML;
+				  
+				  //Get all of the nodes from the XML Response into respective name and link collection lists
+				  var namesList = XMLResponseText.getElementsByTagName("name");
+				  var linksList = XMLResponseText.getElementsByTagName("link");
+				  
+				  //Create the HTML-formatted list that will be displayed on page, listing each language per bullet, starting with the starting unnumbered list tag. 
+				  var responseDisplay = "<ul>"; 
+				  for (var i = 0; i < namesList.length; i++){
+					  //Get the link of a programming language's online documentation.
+					  var link = linksList[i].childNodes[0].nodeValue;
+
+					  //Get the language name of each programming language.
+					  var languageName = namesList[i].childNodes[0].nodeValue;
+
+					  //Generate the anchor tag hyperlink of the language's documentation.
+					  responseDisplay += "<li><a href=\"" + link + "\">" + languageName + "</a></li>";
+				  } //end for loop
+				  
+				  //End the list with the ending unnumbered list tag. 
+				  responseDisplay += "</ul>";
+				  
+				  //Display the list in the inner HTML. 
+				  document.getElementById("languagesList").innerHTML = responseDisplay; 
+			  }
+		  }
+		  
+		  //Start the event listener upon page loading. 
+		  window.addEventListener("load", register, false); 
+	  </script>
+  </head>
+	
+  <body id="home">
+  	<!-- body code goes here -->
+	<div id="header"> 
+		<nav> 
+			<!-- Horizontal Navigation --> 
+			<ul id="navlist">
+				<li> <a href="index.html"> <img id="logo" src="images/web_logo.png" alt="Website logo"> </a> </li>
+				<li><a href="about.html"> About </a></li>
+				<li><a href="portfolio.html"> Portfolio </a></li>
+				<li><a href="pictures.html"> Pictures/Hobbies </a></li>
+				<li><a href="programming.html"> Programming </a></li>
+				<li><a href="contact.html"> Contact </a></li>
+				<li><a href="references.html"> References </a></li>
+			</ul>
+		</nav>
+	</div>
+	  
+	<div id="content"> 
+		
+		<h2> Programming Languages </h2>
+		<p> Click here to display the programming languages: </p>
+			<form>
+			  <label>
+				  <!-- This is the button that will display the computer programming languages the webmaster knows when clicked.-->
+				<input type="button" name="fetch" id="fetch" value="Load Languages" />
+			  </label>
+			</form>
+			<!-- This is the part of the page which the computer programming languages the webmaster knows -->
+		<h3 id="languagesList" class="classes"> </h3>
+		
+		
+		<h2> Academics </h2>
+		<form> 
+			<input type="button" name="popWindowCatalogButton" id="popWindowCatalogButton" value="George Mason University Catalog">
+		</form> <br> 
+		
+		<h5> George Mason University Courses - Information Technology </h5>
+		<!-- Uses the XML file itcourses.xml 
+		NOTE: THE SPRY:REGION and SPRY:REPEAT is causing validation to fail. -->
+		<div spry:region="dsITCourses">
+			<ul class="classes" spry:repeat="dsITCourses"> 
+				<li> {coursecode}: {title} </li>
+			</ul>
+		</div> 
+		
+		<h5> George Mason University Courses - Mathematics &amp; Statistics </h5>
+		<!-- Uses the XML file mathstatcourses.xml 
+		NOTE: THE SPRY:REGION is causing validation to fail. -->
+		<div spry:region="dsMathStatCourses">
+			<ul class="classes" spry:repeat="dsMathStatCourses"> 
+				<li> {coursecode}: {title} </li>
+			</ul>
+		</div>
+		
+		<p> Current Courses (Fall 2018): IT 306 - Program Design/Data Structures (Java), IT 390 - Rapid Development of Scalable Applications (Ruby/Ruby on Rails), IT 342 - Operating System Fundamentals (Linux), IT 331 - Web 1: Web Development (HTML, CSS, JavaScript, XML, DOM, JSON, jQuery), IT 492 - Senior Design Project I </p>
+		<p> For more information on classes at George Mason University, including course descriptions and policies, visit the <a href="#" id="popWindowCatalogLink"> George Mason University Catalog</a> (button at top of this page also links to catalog). The hyperlink and button will open in a new browser window. Most information listed in that catalog is up to date as of the current academic period of the catalog. </p>
+	</div>
+	  
+	<div id="footer">
+		<p> This website is developed as an educational project. Certain materials are included under the fair use exemption of U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use from this site. For more information, please visit the <a href="disclaimer.html"> Disclaimer</a> page. </p> 
+		<p> Last updated on:  <script src="./js/documentTimeStamp.js"> </script> <br> Webmaster: An Nguyen | <a href="Mailto:anguye60@gmu.edu" class="footer">Email: anguye60@gmu.edu</a> </p>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.0.0.js"></script>
+  </body>
+</html>

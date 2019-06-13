@@ -1,0 +1,38 @@
+{
+   "languages": {
+      "language": [
+         {
+            "name": "Python",
+            "link": "https://www.python.org/"
+         },
+         {
+            "name": "Java",
+            "link": "https://www.java.com/en/"
+         },
+         {
+            "name": "SQL/MySQL",
+            "link": "https://www.mysql.com/"
+         },
+         {
+            "name": "PHP",
+            "link": "http://www.php.net/"
+         },
+         {
+            "name": "JavaScript",
+            "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+         },
+         {
+            "name": "HTML",
+            "link": "https://www.w3.org/html/"
+         },
+         {
+            "name": "CSS",
+            "link": "https://www.w3.org/Style/CSS/"
+         },
+         {
+            "name": "Matlab",
+            "link": "https://www.mathworks.com/help/matlab/"
+         }
+      ]
+   }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title> About </title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+	<link href="portfolio.css" rel="stylesheet" type="text/css"> 
+	<script type="text/javascript">
+		
+		//Buttons containing to my external portfolio/work experiences (i.e. LinkedIn and GitHub). 
+		var linkedIn; 
+		var gitHub; 
+		
+		//The function that calls automatically upon loading webpage; button and hyperlink on page set to open external webpage when clicked.
+		function start(){
+			linkedIn = document.getElementById("LinkedInGenericButton");
+			gitHub = document.getElementById("GitHubGenericButton"); 
+			linkedIn.addEventListener("click", open_windowLinkedIn, false); 
+			gitHub.addEventListener("click", open_windowGitHub, false);
+		}
+		
+		//Auxillary function to open window of LinkedIn profile.
+		function open_windowLinkedIn(){
+			open_window("https://www.linkedin.com/in/annguyen997/");
+		}
+		
+		//Auxillary function to open window of GitHub profile.
+		function open_windowGitHub(){
+			open_window("https://github.com/annguyen997");
+		}
+		
+		//Open the respective webpage of a particular button on this webpage when clicked (an event handler).
+		//attributes of open() method - URL, name (which is empty for the moment as it is depecrated), features
+		function open_window(hyperlink){
+			window.open(hyperlink, "", "menubar, toolbar, height=800, width=1000, scrollbars, resizable, titlebar");  
+		}
+		
+		//Add listener when page loads. 
+	 	window.addEventListener("load", start, false); 
+		
+	</script> 
+  </head>
+	
+  <body id="home">
+  	<!-- body code goes here -->
+		<div id="header"> 
+			<nav> 
+				<!-- Horizontal Navigation --> 
+				<ul id="navlist">
+					<li> <a href="index.html"> <img id="logo" src="images/web_logo.png" alt="Website logo"> </a> </li>
+					<li><a href="about.html"> About </a></li>
+					<li><a href="portfolio.html"> Portfolio </a></li>
+					<li><a href="pictures.html"> Pictures/Hobbies </a></li>
+					<li><a href="programming.html"> Programming </a></li>
+					<li><a href="contact.html"> Contact </a></li>
+					<li><a href="references.html"> References </a></li>
+				</ul>
+			</nav>
+		</div>
+	  
+	<div id="content"> 
+		<h1> About Me </h1>
+		
+		<table>
+			<thead>
+				<tr>
+				<!-- All images in this page are created and taken by me -->
+					<th id="nameimage" rowspan="2"><a href="https://www.linkedin.com/in/annguyen997/"> <img src="images/about_photo.png" alt="Photo of webmaster at Microsoft headquarters in Seattle, Washington"> </a> </th> 
+					<th id="name" colspan="4"> An Nguyen <br> Student at George Mason University <br> My brief thoughts on certain topics. </th>
+				</tr>
+				<tr class="aboutrows">
+					<th> Likes </th>
+					<th> Dislikes </th>
+					<th> Questions </th>
+					<th> Conclusion </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th> Education </th>
+					<td> An opportunity to learn new skills that can benefit personally and professionally. </td>
+					<td> Learning, especially in a formal setting like school, can be stressful, and sometimes unforgiving. </td>
+					<td> Is academics embracing future technologies efficiently enough? </td>
+					<td> Education is one of the most important elements of the human condition. Every person has the power to make academics great. </td>
+				</tr>
+				<tr class="aboutrows">
+					<th> Travel </th>
+					<td> The opportunity to explore new possibilities and perspectives, which include new cultures, 
+					     languages, and customs. </td>
+					<td> There is always an possibility for risk in new places, and traveling takes planning and funding. </td>
+					<td> How can we convey our traveling experiences to others in a way that is compelling? </td>
+					<td> Planned and done properly, traveling the world can be a wonderful experience to grow as an individual. </td>
+				</tr>
+				<tr>
+					<th> Health </th>
+					<td> As health is a very important priority for me, there are many opportunities to maintain and improve one's physical health and overall well-being, which includes group exericse sessions, cooking, meditation, and more.  </td>
+					<td> There are many aspects regarding well-being, which means it takes work to find 
+					a balance that works for me. </td>
+					<td> Are there any new frontiers in health that I should look for? </td>
+					<td> Health is valuable, and it takes lots of commitment and responsibility. </td>
+				</tr>
+				<tr class="aboutrows">
+					<th> Politics/Civil Participation </th>
+					<td> In the United States at least, all individuals have the right to express their ideas 
+					on issues, and that could be beneficial for the future of democray and its values. </td>
+					<td> There is always the potential for conflicting ideas, which can determential to progress. </td>
+					<td> How do we approach issues civilly and with open minds (i.e. bipartisan) in today's environment? </td>
+					<td> It is important to participate in our government and its operations. Laws and policies can have a significant impact on people's lives. </td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<br>	
+		<!-- Add official LinkedIn and GitHub buttons on About Me and Contact pages with official trademark notices noted in references.html page --> 
+		<p> Visit my <a href="pictures.html"> Hobbies </a> to learn more about me as well as my work. </p>
+		
+		<form> 
+			<input type="button" name="LinkedIn" id="LinkedInGenericButton" value="LinkedIn">
+			<input type="button" name="GitHub" id="GitHubGenericButton" value="GitHub">
+		</form> <br> 
+	</div>
+	  
+	<div id="footer">
+		<p> This website is developed as an educational project. Certain materials are included under the fair use exemption of U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use from this site. For more information, please visit the <a href="disclaimer.html"> Disclaimer</a> page. </p> 
+		<p> Last updated on:  <script src="./js/documentTimeStamp.js"> </script> <br> Webmaster: An Nguyen | <a href="Mailto:anguye60@gmu.edu" class="footer">Email: anguye60@gmu.edu</a> </p>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.0.0.js"></script>
+  </body>
+</html>

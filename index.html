@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> An Nguyen </title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+	<link href="portfolio.css" rel="stylesheet">
+	<script type="text/javascript" src="js/greetingMessage.js"></script>
+	<script type="text/javascript" src="js/imageExpansion.js"></script>
+	<script>
+		
+		//The function that calls automatically upon loading webpage; button and hyperlink on page set to open external webpage when clicked.
+		function start(){
+			//The object that links to the disclaimer page of the website. 
+			var disclaimer = document.getElementById("disclaimerHomeLink").addEventListener("click", open_window, false); 
+		}
+		
+		//Open the respective webpage on this webpage when clicked (an event handler).
+		//attributes of open() method - URL, name (which is empty for the moment as it is depecrated), features
+		function open_window(){
+			window.open("disclaimer.html", "", "height=400, width=400, titlebar");  
+		}
+		
+		//Add listener when page loads. 
+	 	window.addEventListener("load", start, false); 
+		
+	</script> 
+
+	<!-- jQuery code from the jQuery library -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<!-- This is the code that will slowly fade the website's transparent logo upon clicking the logo -->
+	<script>
+
+		//The script that will load upon page loading; meaning the function will be able to run on-demand. 
+		$(document).ready(function() {
+			//If an element on page is clicked, then the element will be changed accordingly. In this case, the logo will slowly fade. 
+			$('#transparent').click(function() {
+				$(this).fadeToggle("slow"); 
+			}); //end .click
+		});  // end ready
+		
+	</script>
+  </head>
+  <body id="home">
+	  
+	<div id="header"> 
+		<nav> 
+			<!-- Horizontal Navigation --> 
+			<ul id="navlist">
+				<li> <a href="index.html"> <img id="logo" src="images/web_logo.png" alt="Website logo"> </a> </li>
+				<li><a href="about.html"> About </a></li>
+				<li><a href="portfolio.html"> Portfolio </a></li>
+				<li><a href="pictures.html"> Pictures/Hobbies </a></li>
+				<li><a href="programming.html"> Programming </a></li>
+				<li><a href="contact.html"> Contact </a></li>
+				<li><a href="references.html"> References </a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<h1 id="homepageopen"> This is <img id="transparent" src="images/logo_transparent.png" alt="Logo of the website in a clear presentation."></h1>
+  
+<div id="content"> 
+	<p id="greetingMessage"></p>
+	<br>
+
+	<p> Let me know how you think. You can visit the <a href="contact.html"> Contact </a> page to express your ideas, which includes an interactive web form. </p>
+	<p> This website is being made for an education project. For more information, see the <a id="disclaimerHomeLink" href="#"> Disclaimer</a>. This hyperlink will be displayed as a pop-up window.</p>
+
+</div>
+	  
+	<div id="footer">
+		<p> This website is developed as an educational project. Certain materials are included under the fair use exemption of U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use from this site. For more information, please visit the <a href="disclaimer.html"> Disclaimer</a> page. </p> 
+		<p> Last updated on:  <script src="./js/documentTimeStamp.js"> </script> <br> Webmaster: An Nguyen | <a href="Mailto:anguye60@gmu.edu" class="footer">Email: anguye60@gmu.edu</a> </p>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.0.0.js"></script>
+	 
+	  
+  </body>
+</html>

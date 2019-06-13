@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+    <title> Programming/Coding </title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+	<link href="portfolio.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		
+		var stringText; //The string variable from the form on this page that will be used to manipulate with various functions.
+		var stringForm; //The text form that allows information to be inputted 
+		var button;  //The submit button of form
+	
+	//Call the function when the page loads. 
+	function start(){
+		stringForm = document.getElementById("stringManipulation");
+		button = document.getElementById("submitString");
+		button.addEventListener("click", manipulationString, false);
+	}
+	
+	//Parse and manipulate the inputted string using JavaScript String object functions.
+	function manipulationString(){
+		stringText = stringForm.value; 
+		
+		//Display the string user entered
+		var stringOutput = "Output of The String: " + stringText; 
+		//First element/character in the string
+		stringOutput += "\nFirst character of your string: " + stringText.charAt(0);
+		
+		//First element/character in the string as UTF-16 code character
+		stringOutput += "\nFirst character of your string in UTF-16: " + stringText.charCodeAt(0);
+		
+		//Length of inputted string. 
+		stringOutput += "\nLength of string: " + stringText.length;
+		
+		//Inputted string in all uppercase. 
+		stringOutput += "\nString in uppercase: " + stringText.toUpperCase();
+		
+		//Inputted string in all lowercase. 
+		stringOutput += "\nString in lowercase: " + stringText.toLowerCase();
+		
+		//Place the output string into the textbox for user to view. 
+		document.getElementById("stringOutput").innerHTML = stringOutput; 
+	}		
+	
+	//Start the function start() when page loads.
+	window.addEventListener("load", start, false);
+		
+	</script>
+  </head>
+	
+  <body id="home">
+  	<!-- body code goes here -->
+		<div id="header"> 
+				<nav> 
+					<!-- Horizontal Navigation --> 
+					<ul id="navlist">
+						<li> <a href="index.html"> <img id="logo" src="images/web_logo.png" alt="Website logo"> </a> </li>
+						<li><a href="about.html"> About </a></li>
+						<li><a href="portfolio.html"> Portfolio </a></li>
+						<li><a href="pictures.html"> Pictures/Hobbies </a></li>
+						<li><a href="programming.html"> Programming </a></li>
+						<li><a href="contact.html"> Contact </a></li>
+						<li><a href="references.html"> References </a></li>
+					</ul>
+				</nav>
+		</div>
+	  
+	<div id="content"> 
+		<h1> Programming/Coding Area </h1> <br> 
+        
+		<h2> String Parsing and Manipulation </h2>
+		<p> Most computer programming languages have mechanisms to search and change strings, which is computer science jargon meaning the literal sequence of characters (letters, numbers, special characters, etc). Strings can be manipulated in multiple ways using a programming language's methods or functions, and the changed strings can be displayed. When strings are stored into variables, it is easier to save manipulated strings (Often in programming languages, strings are immutable, which means a string cannot be changed once created unless you create another string instance. </p>
+        
+		You can see string manipulation in action by using this text box: 
+		
+		<form> 
+			Enter a string: <input type="text" name="stringManipulation" id="stringManipulation"> 
+			<input id="submitString" name="submitString" type="button" value="Submit"> <br>
+			<textarea id="stringOutput" rows="8" cols="40">
+			</textarea> 
+		</form>
+
+		<br>
+		
+		<!-- <p> The following is the code of this small string manipulation using JavaScript. <p> --> 
+		<!-- Source info on the code tag: https://www.w3schools.com/TAGs/tag_code.asp -->	
+		
+
+		<div class="code">
+			<code>
+			</code>
+		</div>
+		
+		
+	</div>
+	  
+	<div id="footer">
+		<p> This website is developed as an educational project. Certain materials are included under the fair use exemption of U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use from this site. For more information, please visit the <a href="disclaimer.html"> Disclaimer</a> page. </p> 
+		<p> Last updated on:  <script src="./js/documentTimeStamp.js"> </script> <br> Webmaster: An Nguyen | <a href="Mailto:anguye60@gmu.edu" class="footer">Email: anguye60@gmu.edu</a> </p>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.0.0.js"></script>
+  </body>
+</html>
